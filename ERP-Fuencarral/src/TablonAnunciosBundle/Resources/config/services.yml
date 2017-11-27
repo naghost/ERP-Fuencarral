@@ -1,0 +1,4 @@
+services:
+#    tablon_anuncios.example:
+#        class: TablonAnunciosBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

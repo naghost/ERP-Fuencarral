@@ -1,3 +1,35 @@
+contabilidad:
+    resource: "@ContabilidadBundle/Resources/config/routing.yml"
+    prefix:   /
+
+compras:
+    resource: "@ComprasBundle/Resources/config/routing.yml"
+    prefix:   /
+
+parte_horas:
+    resource: "@ParteHorasBundle/Resources/config/routing.yml"
+    prefix:   /
+
+tablon_anuncios:
+    resource: "@TablonAnunciosBundle/Resources/config/routing.yml"
+    prefix:   /
+
+ventas:
+    resource: "@VentasBundle/Resources/config/routing.yml"
+    prefix:   /
+
+proyectos:
+    resource: "@ProyectosBundle/Resources/config/routing.yml"
+    prefix:   /
+
+chat:
+    resource: "@ChatBundle/Resources/config/routing.yml"
+    prefix:   /
+
+punto_venta:
+    resource: "@PuntoVentaBundle/Resources/config/routing.yml"
+    prefix:   /
+
 usuarios:
     resource: "@UsuariosBundle/Resources/config/routing.yml"
     prefix:   /

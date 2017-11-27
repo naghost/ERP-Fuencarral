@@ -1,0 +1,3 @@
+parte_horas_homepage:
+    path:     /
+    defaults: { _controller: ParteHorasBundle:Default:index }

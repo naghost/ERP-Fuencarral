@@ -20,6 +20,14 @@ class AppKernel extends Kernel
             new AgendaBundle\AgendaBundle(),
             new PersonalBundle\PersonalBundle(),
             new InventarioBundle\InventarioBundle(),
+            new PuntoVentaBundle\PuntoVentaBundle(),
+            new ChatBundle\ChatBundle(),
+            new ProyectosBundle\ProyectosBundle(),
+            new VentasBundle\VentasBundle(),
+            new TablonAnunciosBundle\TablonAnunciosBundle(),
+            new ParteHorasBundle\ParteHorasBundle(),
+            new ComprasBundle\ComprasBundle(),
+            new ContabilidadBundle\ContabilidadBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

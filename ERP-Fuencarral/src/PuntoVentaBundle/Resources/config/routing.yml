@@ -1,0 +1,3 @@
+punto_venta_homepage:
+    path:     /
+    defaults: { _controller: PuntoVentaBundle:Default:index }

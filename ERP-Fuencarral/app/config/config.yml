@@ -6,6 +6,14 @@ imports:
     - { resource: "@PersonalBundle/Resources/config/services.yml" }
     - { resource: "@InventarioBundle/Resources/config/services.yml" }
     - { resource: "@AgendaBundle/Resources/config/services.yml" }
+    - { resource: "@PuntoVentaBundle/Resources/config/services.yml" }
+    - { resource: "@ChatBundle/Resources/config/services.yml" }
+    - { resource: "@ProyectosBundle/Resources/config/services.yml" }
+    - { resource: "@VentasBundle/Resources/config/services.yml" }
+    - { resource: "@TablonAnunciosBundle/Resources/config/services.yml" }
+    - { resource: "@ParteHorasBundle/Resources/config/services.yml" }
+    - { resource: "@ComprasBundle/Resources/config/services.yml" }
+    - { resource: "@ContabilidadBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
