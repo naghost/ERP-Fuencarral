@@ -77,6 +77,7 @@ class ComposerStaticInit9e43d300b1a2ea85bd3edf7775536c47
         'F' => 
         array (
             'Fig\\Link\\' => 9,
+            'FabricacionBundle\\' => 18,
         ),
         'D' => 
         array (
@@ -240,6 +241,10 @@ class ComposerStaticInit9e43d300b1a2ea85bd3edf7775536c47
         'Fig\\Link\\' => 
         array (
             0 => __DIR__ . '/..' . '/fig/link-util/src',
+        ),
+        'FabricacionBundle\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/FabricacionBundle',
         ),
         'Doctrine\\Instantiator\\' => 
         array (

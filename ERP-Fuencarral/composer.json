@@ -6,9 +6,9 @@
     "autoload": {
         "psr-4": {
             "AppBundle\\": "src/AppBundle",
-	        "InventarioBundle\\": "src/InventarioBundle",
-	        "PersonalBundle\\": "src/PersonalBundle",
-	        "UsuariosBundle\\": "src/UsuariosBundle",
+	    "InventarioBundle\\": "src/InventarioBundle",
+	    "PersonalBundle\\": "src/PersonalBundle",
+	    "UsuariosBundle\\": "src/UsuariosBundle",
             "AgendaBundle\\": "src/AgendaBundle",
             "PuntoVentaBundle\\": "src/PuntoVentaBundle",
             "ChatBundle\\": "src/ChatBundle",
@@ -17,7 +17,8 @@
             "TablonAnunciosBundle\\": "src/TablonAnunciosBundle",
             "ParteHorasBundle\\": "src/ParteHorasBundle",
             "ComprasBundle\\": "src/ComprasBundle",
-            "ContabilidadBundle\\": "src/ContabilidadBundle"
+            "ContabilidadBundle\\": "src/ContabilidadBundle",
+	    "FabricacionBundle\\": "src/FabricacionBundle"
         },
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
     },

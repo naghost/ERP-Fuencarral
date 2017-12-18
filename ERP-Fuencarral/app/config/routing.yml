@@ -1,3 +1,7 @@
+fabricacion:
+    resource: "@FabricacionBundle/Resources/config/routing.yml"
+    prefix:   /
+
 contabilidad:
     resource: "@ContabilidadBundle/Resources/config/routing.yml"
     prefix:   /

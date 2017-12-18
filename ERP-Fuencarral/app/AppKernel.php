@@ -28,6 +28,7 @@ class AppKernel extends Kernel
             new ParteHorasBundle\ParteHorasBundle(),
             new ComprasBundle\ComprasBundle(),
             new ContabilidadBundle\ContabilidadBundle(),
+            new FabricacionBundle\FabricacionBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
