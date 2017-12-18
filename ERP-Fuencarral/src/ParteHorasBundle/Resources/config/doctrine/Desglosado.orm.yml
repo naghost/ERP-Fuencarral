@@ -1,0 +1,41 @@
+ParteHorasBundle\Entity\Desglosado:
+    type: entity
+    table: desglosado
+    indexes:
+        idOrdenAux:
+            columns:
+                - idOrdenAux
+        idTareaAux:
+            columns:
+                - idTareaAux
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        idordenaux:
+            targetEntity: Ordenfabricacion
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idOrdenAux:
+                    referencedColumnName: idOrden
+            orphanRemoval: false
+        idtareaaux:
+            targetEntity: Tareas
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idTareaAux:
+                    referencedColumnName: idTarea
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

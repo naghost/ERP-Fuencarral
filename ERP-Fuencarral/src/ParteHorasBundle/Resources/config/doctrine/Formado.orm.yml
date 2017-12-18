@@ -1,0 +1,41 @@
+ParteHorasBundle\Entity\Formado:
+    type: entity
+    table: formado
+    indexes:
+        idpedido:
+            columns:
+                - idpedido
+        idproducto:
+            columns:
+                - idproducto
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        idpedido:
+            targetEntity: Pedidos
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idpedido:
+                    referencedColumnName: idpedido
+            orphanRemoval: false
+        idproducto:
+            targetEntity: Productos
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idproducto:
+                    referencedColumnName: IDProducto
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

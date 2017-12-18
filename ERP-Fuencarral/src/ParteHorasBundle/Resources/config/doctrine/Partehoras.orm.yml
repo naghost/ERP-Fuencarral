@@ -1,0 +1,65 @@
+ParteHorasBundle\Entity\Partehoras:
+    type: entity
+    table: ParteHoras
+    indexes:
+        id_usuario_aux:
+            columns:
+                - id_usuario_aux
+        id_tarea_aux:
+            columns:
+                - id_tarea_aux
+    id:
+        idParte:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: id_parte
+            generator:
+                strategy: IDENTITY
+    fields:
+        fechaActual:
+            type: date
+            nullable: false
+            column: fecha_actual
+        descripcion:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        duracion:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+        materialUtilizado:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+            column: material_utilizado
+    manyToOne:
+        idUsuarioAux:
+            targetEntity: Usuarios
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_usuario_aux:
+                    referencedColumnName: Id_Usuario
+            orphanRemoval: false
+        idTareaAux:
+            targetEntity: Tareas
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_tarea_aux:
+                    referencedColumnName: idTarea
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

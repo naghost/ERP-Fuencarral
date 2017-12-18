@@ -1,0 +1,54 @@
+ParteHorasBundle\Entity\Almacenproductos:
+    type: entity
+    table: AlmacenProductos
+    indexes:
+        IDAlmacen:
+            columns:
+                - IDAlmacen
+        IDProducto:
+            columns:
+                - IDProducto
+        IDAlmacen_2:
+            columns:
+                - IDAlmacen
+        IDProducto_2:
+            columns:
+                - IDProducto
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        cantidad:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: Cantidad
+    manyToOne:
+        idproducto:
+            targetEntity: Productos
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                IDProducto:
+                    referencedColumnName: IDProducto
+            orphanRemoval: false
+        idalmacen:
+            targetEntity: Almacen
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                IDAlmacen:
+                    referencedColumnName: IDAlmacen
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

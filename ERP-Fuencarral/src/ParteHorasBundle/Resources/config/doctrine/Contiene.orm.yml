@@ -1,0 +1,45 @@
+ParteHorasBundle\Entity\Contiene:
+    type: entity
+    table: Contiene
+    indexes:
+        IdAuxPermiso:
+            columns:
+                - IdAuxPermiso
+                - IdAuxModulo
+        IdAuxModulo:
+            columns:
+                - IdAuxModulo
+        IDX_4FF66CF22D4083E9:
+            columns:
+                - IdAuxPermiso
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        idauxpermiso:
+            targetEntity: Permisosacceso
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                IdAuxPermiso:
+                    referencedColumnName: Id_Permiso
+            orphanRemoval: false
+        idauxmodulo:
+            targetEntity: Modulo
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                IdAuxModulo:
+                    referencedColumnName: Id_Modulo
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

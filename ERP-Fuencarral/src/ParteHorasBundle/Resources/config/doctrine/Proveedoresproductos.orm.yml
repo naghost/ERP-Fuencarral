@@ -1,0 +1,48 @@
+ParteHorasBundle\Entity\Proveedoresproductos:
+    type: entity
+    table: ProveedoresProductos
+    indexes:
+        IDProveedor:
+            columns:
+                - IDProveedor
+        IDProducto:
+            columns:
+                - IDProducto
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        precio:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            column: Precio
+    manyToOne:
+        idproducto:
+            targetEntity: Productos
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                IDProducto:
+                    referencedColumnName: IDProducto
+            orphanRemoval: false
+        idproveedor:
+            targetEntity: Proveedores
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                IDProveedor:
+                    referencedColumnName: IDProveedor
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

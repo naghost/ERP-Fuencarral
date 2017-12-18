@@ -1,0 +1,20 @@
+ParteHorasBundle\Entity\Ordenfabricacion:
+    type: entity
+    table: ordenFabricacion
+    id:
+        idorden:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idOrden
+            generator:
+                strategy: IDENTITY
+    fields:
+        cantidad:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+    lifecycleCallbacks: {  }

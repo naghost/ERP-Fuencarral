@@ -1,0 +1,61 @@
+ParteHorasBundle\Entity\Ventas:
+    type: entity
+    table: Ventas
+    indexes:
+        idClienteAux:
+            columns:
+                - idClienteAux
+        idIngresosAux:
+            columns:
+                - idIngresosAux
+        idEmpleadosAux:
+            columns:
+                - idEmpleadosAux
+        idEmpleadosAux_2:
+            columns:
+                - idEmpleadosAux
+    id:
+        idventas:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idVentas
+            generator:
+                strategy: IDENTITY
+    fields:
+        idingresosaux:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: idIngresosAux
+        idempleadosaux:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: idEmpleadosAux
+        fechaorden:
+            type: date
+            nullable: false
+            column: fechaOrden
+        estado:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+    manyToOne:
+        idclienteaux:
+            targetEntity: Cliente
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idClienteAux:
+                    referencedColumnName: idCliente
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

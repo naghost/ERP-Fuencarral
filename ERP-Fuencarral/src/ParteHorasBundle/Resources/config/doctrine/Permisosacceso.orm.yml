@@ -1,0 +1,58 @@
+ParteHorasBundle\Entity\Permisosacceso:
+    type: entity
+    table: PermisosAcceso
+    indexes:
+        IdAuxModulo:
+            columns:
+                - IdAuxModulo
+                - IdAuxCategoria
+        IDX_22CC64C6B6CF4FD3:
+            columns:
+                - IdAuxModulo
+    id:
+        idPermiso:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: Id_Permiso
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombre:
+            type: string
+            nullable: false
+            length: 25
+            options:
+                fixed: false
+            column: Nombre
+        descripcion:
+            type: string
+            nullable: false
+            length: 250
+            options:
+                fixed: false
+            column: Descripcion
+        activo:
+            type: boolean
+            nullable: false
+            column: Activo
+        idauxcategoria:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: IdAuxCategoria
+    manyToOne:
+        idauxmodulo:
+            targetEntity: Modulo
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                IdAuxModulo:
+                    referencedColumnName: Id_Modulo
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

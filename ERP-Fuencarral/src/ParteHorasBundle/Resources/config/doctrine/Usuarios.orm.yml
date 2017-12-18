@@ -1,0 +1,58 @@
+ParteHorasBundle\Entity\Usuarios:
+    type: entity
+    table: Usuarios
+    indexes:
+        IdAuxPermiso:
+            columns:
+                - IdAuxPermiso
+                - IdAuxEmpleado
+        IDX_F780E5A42D4083E9:
+            columns:
+                - IdAuxPermiso
+    id:
+        idUsuario:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: Id_Usuario
+            generator:
+                strategy: IDENTITY
+    fields:
+        loguin:
+            type: string
+            nullable: false
+            length: 25
+            options:
+                fixed: false
+            column: Loguin
+        contrasena:
+            type: string
+            nullable: false
+            length: 25
+            options:
+                fixed: false
+            column: Contrasena
+        activo:
+            type: boolean
+            nullable: false
+            column: Activo
+        idauxempleado:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: IdAuxEmpleado
+    manyToOne:
+        idauxpermiso:
+            targetEntity: Permisosacceso
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                IdAuxPermiso:
+                    referencedColumnName: Id_Permiso
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

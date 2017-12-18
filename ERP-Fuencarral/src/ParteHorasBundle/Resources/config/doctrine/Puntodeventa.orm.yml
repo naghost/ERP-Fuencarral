@@ -1,0 +1,47 @@
+ParteHorasBundle\Entity\Puntodeventa:
+    type: entity
+    table: PuntoDeVenta
+    indexes:
+        IDProducto:
+            columns:
+                - IDProducto
+        IDEmpleado:
+            columns:
+                - IDEmpleado
+    id:
+        idpuntoventa:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: IDPuntoVenta
+            generator:
+                strategy: IDENTITY
+    fields:
+        fechaventa:
+            type: date
+            nullable: false
+            column: FechaVenta
+    manyToOne:
+        idproducto:
+            targetEntity: Productos
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                IDProducto:
+                    referencedColumnName: IDProducto
+            orphanRemoval: false
+        idempleado:
+            targetEntity: Empleados
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                IDEmpleado:
+                    referencedColumnName: id_empleado
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

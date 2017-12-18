@@ -1,0 +1,54 @@
+ParteHorasBundle\Entity\Compra:
+    type: entity
+    table: compra
+    indexes:
+        id_pedido:
+            columns:
+                - id_pedido
+    id:
+        idCompra:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: id_compra
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombreCompra:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: nombre_compra
+        fechaCompra:
+            type: date
+            nullable: false
+            column: fecha_compra
+        idGasto:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: id_gasto
+        destinoCompra:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: destino_compra
+    manyToOne:
+        idPedido:
+            targetEntity: Pedidos
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_pedido:
+                    referencedColumnName: idpedido
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

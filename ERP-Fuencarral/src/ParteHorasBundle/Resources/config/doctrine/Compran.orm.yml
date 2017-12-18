@@ -1,0 +1,45 @@
+ParteHorasBundle\Entity\Compran:
+    type: entity
+    table: compran
+    indexes:
+        ID_compra:
+            columns:
+                - ID_compra
+                - ID_producto
+        ID_producto:
+            columns:
+                - ID_producto
+        IDX_55948D6EC37164E7:
+            columns:
+                - ID_compra
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        idCompra:
+            targetEntity: Compra
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                ID_compra:
+                    referencedColumnName: id_compra
+            orphanRemoval: false
+        idProducto:
+            targetEntity: Productos
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                ID_producto:
+                    referencedColumnName: IDProducto
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

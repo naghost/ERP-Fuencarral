@@ -1,0 +1,110 @@
+ParteHorasBundle\Entity\Empleados:
+    type: entity
+    table: Empleados
+    indexes:
+        id-categoria:
+            columns:
+                - id-categoria
+        id_departamento:
+            columns:
+                - id_departamento
+    id:
+        idEmpleado:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: id_empleado
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombre:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+        apellidos:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+        dni:
+            type: string
+            nullable: false
+            length: 9
+            options:
+                fixed: false
+        direccionprivada:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+            column: direccionPrivada
+        nacionalidad:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+        fechanacimiento:
+            type: date
+            nullable: false
+            column: fechaNacimiento
+        tlfmovil:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: tlfMovil
+        tlfempresa:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: tlfEmpresa
+        direcciontrabajo:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+            column: direccionTrabajo
+        ubicaciontrabajo:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+            column: ubicacionTrabajo
+        idResponsable:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: id-responsable
+    manyToOne:
+        idCategoria:
+            targetEntity: Categoria
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id-categoria:
+                    referencedColumnName: Id_Categoria
+            orphanRemoval: false
+        idDepartamento:
+            targetEntity: Departamentos
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_departamento:
+                    referencedColumnName: id_departamento
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

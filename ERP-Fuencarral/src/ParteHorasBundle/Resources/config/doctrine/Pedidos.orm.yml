@@ -1,0 +1,31 @@
+ParteHorasBundle\Entity\Pedidos:
+    type: entity
+    table: pedidos
+    id:
+        idpedido:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        direccion:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        tiempoMaximo:
+            type: date
+            nullable: false
+            column: tiempo_maximo
+        referenciaPedido:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: referencia_pedido
+    lifecycleCallbacks: {  }

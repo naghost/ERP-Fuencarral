@@ -1,0 +1,29 @@
+ParteHorasBundle\Entity\Categoria:
+    type: entity
+    table: Categoria
+    id:
+        idCategoria:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: Id_Categoria
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombre:
+            type: string
+            nullable: false
+            length: 25
+            options:
+                fixed: false
+            column: Nombre
+        caracteristicas:
+            type: string
+            nullable: false
+            length: 250
+            options:
+                fixed: false
+            column: Caracteristicas
+    lifecycleCallbacks: {  }

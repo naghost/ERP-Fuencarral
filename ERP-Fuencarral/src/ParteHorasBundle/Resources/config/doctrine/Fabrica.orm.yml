@@ -1,0 +1,41 @@
+ParteHorasBundle\Entity\Fabrica:
+    type: entity
+    table: fabrica
+    indexes:
+        idProducto:
+            columns:
+                - idProducto
+        idOrden:
+            columns:
+                - idOrden
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        idproducto:
+            targetEntity: Productos
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idProducto:
+                    referencedColumnName: IDProducto
+            orphanRemoval: false
+        idorden:
+            targetEntity: Ordenfabricacion
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idOrden:
+                    referencedColumnName: idOrden
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

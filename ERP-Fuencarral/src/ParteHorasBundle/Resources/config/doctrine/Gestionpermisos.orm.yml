@@ -1,0 +1,56 @@
+ParteHorasBundle\Entity\Gestionpermisos:
+    type: entity
+    table: GestionPermisos
+    indexes:
+        id_empleado:
+            columns:
+                - id_empleado
+        id_permiso:
+            columns:
+                - id_permiso
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        fechaInicio:
+            type: date
+            nullable: false
+            column: fecha_inicio
+        fechaFin:
+            type: date
+            nullable: false
+            column: fecha_fin
+        diasHabiles:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: dias_habiles
+    manyToOne:
+        idEmpleado:
+            targetEntity: Empleados
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_empleado:
+                    referencedColumnName: id_empleado
+            orphanRemoval: false
+        idPermiso:
+            targetEntity: Permisosvacaciones
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_permiso:
+                    referencedColumnName: idPermiso
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

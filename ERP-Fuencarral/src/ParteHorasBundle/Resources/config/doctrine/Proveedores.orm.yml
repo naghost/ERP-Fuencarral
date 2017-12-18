@@ -1,0 +1,36 @@
+ParteHorasBundle\Entity\Proveedores:
+    type: entity
+    table: Proveedores
+    id:
+        idproveedor:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: IDProveedor
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombre:
+            type: string
+            nullable: false
+            length: 200
+            options:
+                fixed: false
+            column: Nombre
+        numero:
+            type: string
+            nullable: false
+            length: 200
+            options:
+                fixed: false
+            column: Numero
+        direccion:
+            type: string
+            nullable: false
+            length: 200
+            options:
+                fixed: false
+            column: Direccion
+    lifecycleCallbacks: {  }
