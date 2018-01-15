@@ -1,1 +1,83 @@
-Hello World!
+{% extends 'InventarioBundle:Default:base.html.twig' %}
+{% block Aplicacion %}
+   <form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Crear nuevo producto</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Nombre Producto</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" placeholder="Nombre de producto" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
+
+<!-- Password input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="precio">Precio</label>
+  <div class="col-md-4">
+    <input id="precio" name="precio" placeholder="Precio" class="form-control input-md" required="" type="password">
+    
+  </div>
+</div>
+
+<!-- Multiple Checkboxes -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="material">Es un material</label>
+  <div class="col-md-4">
+  <div class="checkbox">
+    <label for="material-0">
+      <input name="material" id="material-0" value="1" type="checkbox">
+      Material
+    </label>
+	</div>
+  </div>
+</div>
+
+<!-- Multiple Checkboxes -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="pos">Se vende en el punto de venta</label>
+  <div class="col-md-4">
+  <div class="checkbox">
+    <label for="pos-0">
+      <input name="pos" id="pos-0" value="1" type="checkbox">
+      Punto de venta
+    </label>
+	</div>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectbasic">Almacen</label>
+  <div class="col-md-4">
+    <select id="selectbasic" name="selectbasic" class="form-control">
+      <option value="1">Almacen 1</option>
+      <option value="2">Almacen 2</option>
+    </select>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="cantidad">Cantidad</label>  
+  <div class="col-md-4">
+  <input id="cantidad" name="cantidad" placeholder="Cantidad" class="form-control input-md" type="text">
+    
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Enviar"></label>
+  <div class="col-md-4">
+    <button id="Enviar" name="Enviar" class="btn btn-primary">Crear Producto</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+{% endblock %}

@@ -29,6 +29,7 @@
       <parameter key="ParteHorasBundle">ParteHorasBundle\ParteHorasBundle</parameter>
       <parameter key="ComprasBundle">ComprasBundle\ComprasBundle</parameter>
       <parameter key="ContabilidadBundle">ContabilidadBundle\ContabilidadBundle</parameter>
+      <parameter key="FabricacionBundle">FabricacionBundle\FabricacionBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -135,6 +136,11 @@
         <parameter key="parent">null</parameter>
         <parameter key="path">/home/naghost/ERP/ERP-Fuencarral/ERP-Fuencarral/src/ContabilidadBundle</parameter>
         <parameter key="namespace">ContabilidadBundle</parameter>
+      </parameter>
+      <parameter key="FabricacionBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/home/naghost/ERP/ERP-Fuencarral/ERP-Fuencarral/src/FabricacionBundle</parameter>
+        <parameter key="namespace">FabricacionBundle</parameter>
       </parameter>
       <parameter key="DebugBundle" type="collection">
         <parameter key="parent">null</parameter>
@@ -692,7 +698,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>KTURZljc5bDX0XRqRxkrg6</argument>
+      <argument>xJzSJ37foUgFoAaaG26LiU</argument>
       <argument>/home/naghost/ERP/ERP-Fuencarral/ERP-Fuencarral/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -702,7 +708,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>KTURZljc5bDX0XRqRxkrg6</argument>
+      <argument>xJzSJ37foUgFoAaaG26LiU</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -2256,12 +2262,12 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
-      <argument>5a2e98455124b1.30349882</argument>
+      <argument>5a5380ab377423.99068020</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-      <argument>5a2e98455124b1.30349882</argument>
+      <argument>5a5380ab377423.99068020</argument>
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -2491,6 +2497,10 @@
         <argument>Contabilidad</argument>
       </call>
       <call method="addPath">
+        <argument>/home/naghost/ERP/ERP-Fuencarral/ERP-Fuencarral/src/FabricacionBundle/Resources/views</argument>
+        <argument>Fabricacion</argument>
+      </call>
+      <call method="addPath">
         <argument>/home/naghost/ERP/ERP-Fuencarral/ERP-Fuencarral/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
@@ -2679,6 +2689,10 @@
       <call method="addPath">
         <argument>/home/naghost/ERP/ERP-Fuencarral/ERP-Fuencarral/src/ContabilidadBundle/Resources/views</argument>
         <argument>Contabilidad</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/naghost/ERP/ERP-Fuencarral/ERP-Fuencarral/src/FabricacionBundle/Resources/views</argument>
+        <argument>Fabricacion</argument>
       </call>
       <call method="addPath">
         <argument>/home/naghost/ERP/ERP-Fuencarral/ERP-Fuencarral/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
@@ -3613,7 +3627,7 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>ddaZEAzNSd</argument>
       <argument>0</argument>
-      <argument>KTURZljc5bDX0XRqRxkrg6</argument>
+      <argument>xJzSJ37foUgFoAaaG26LiU</argument>
       <argument>/home/naghost/ERP/ERP-Fuencarral/ERP-Fuencarral/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -3621,7 +3635,7 @@
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>WUYvYx8oZG</argument>
       <argument>0</argument>
-      <argument>KTURZljc5bDX0XRqRxkrg6</argument>
+      <argument>xJzSJ37foUgFoAaaG26LiU</argument>
       <argument>/home/naghost/ERP/ERP-Fuencarral/ERP-Fuencarral/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -3629,7 +3643,7 @@
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>JZPHM9fAZ4</argument>
       <argument>0</argument>
-      <argument>KTURZljc5bDX0XRqRxkrg6</argument>
+      <argument>xJzSJ37foUgFoAaaG26LiU</argument>
       <argument>/home/naghost/ERP/ERP-Fuencarral/ERP-Fuencarral/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -3637,7 +3651,7 @@
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>yisLtO8Hn3</argument>
       <argument>0</argument>
-      <argument>KTURZljc5bDX0XRqRxkrg6</argument>
+      <argument>xJzSJ37foUgFoAaaG26LiU</argument>
       <argument>/home/naghost/ERP/ERP-Fuencarral/ERP-Fuencarral/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>

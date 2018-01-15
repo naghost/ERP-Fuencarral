@@ -2,12 +2,39 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block titulo %}Titulo Vacio{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+	<link rel="stylesheet"  href="{{ asset('css/bootstrap.css') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#"> <span class="glyphicon glyphicon-cog" style="color:#00A7FF;"></span><span class="glyphicon glyphicon-cog" style="font-size: 10px; color:#FF9E0F;"></span> ERP-Fuencarral</a>
+	    </div>
+	    <ul class="nav navbar-nav">
+	      <li class="active"><a href="hola">Inventario</a></li>
+	      <li><a href="#">Page 1</a></li>
+	      <li><a href="#">Page 2</a></li>
+	      <li><a href="#">Page 3</a></li>
+	    </ul>
+	  </div>
+	</nav>
+	<div class="container-fluid">
+
+		<div class="col-md-2 col-lg-2 col-xs-2 col-sm-2">
+<div class="panel panel-default" style="border-left:0px; border-top:0px; border-bottom:0px; border-radius:0px;">
+ 			{% block MenuLateral %}{% endblock %}
+</div>
+		</div>
+		<div class="col-md-10 col-lg-10 col-xs-10 col-sm-2">
+       		 {% block Aplicacion %}{% endblock %}
+       		 </div>
+	</div>
         {% block javascripts %}{% endblock %}
+
+	<script src="{{ asset('js/bootstrap.css') }}"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     </body>
 </html>

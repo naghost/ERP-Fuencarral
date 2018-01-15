@@ -10,4 +10,16 @@ class DefaultController extends Controller
     {
         return $this->render('InventarioBundle:Default:index.html.twig');
     }
+     public function almacenAction()
+    {
+        return $this->render('InventarioBundle:Default:almacen.html.twig');
+    }
+     public function proveedorAction()
+    {
+        return $this->render('InventarioBundle:Default:proveedor.html.twig');
+    }
+         public function verAction()
+    {
+        return $this->render('InventarioBundle:Default:ver.html.twig');
+    }
 }
