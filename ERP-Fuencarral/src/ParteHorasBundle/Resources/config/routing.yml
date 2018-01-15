@@ -1,3 +1,11 @@
 parte_horas_homepage:
     path:     /
     defaults: { _controller: ParteHorasBundle:Default:index }
+
+all_eventos:
+    path:     /Partehoras/all
+    defaults: {_controller: ParteHorasBundle:Partehoras:all}
+
+nuevo_eventos:
+    path:     /Partehoras/nuevo
+    defaults: {_controller: ParteHorasBundle:Partehoras:nuevo}
