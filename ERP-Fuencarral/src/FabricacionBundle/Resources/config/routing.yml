@@ -1,3 +1,0 @@
-fabricacion_homepage:
-    path:     /
-    defaults: { _controller: FabricacionBundle:Default:index }

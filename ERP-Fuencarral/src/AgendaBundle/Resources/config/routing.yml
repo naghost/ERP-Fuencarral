@@ -1,3 +1,0 @@
-agenda_homepage:
-    path:     /
-    defaults: { _controller: AgendaBundle:Default:index }

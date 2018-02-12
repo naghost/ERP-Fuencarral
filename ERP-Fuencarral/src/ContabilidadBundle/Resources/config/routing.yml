@@ -1,3 +1,0 @@
-contabilidad_homepage:
-    path:     /
-    defaults: { _controller: ContabilidadBundle:Default:index }

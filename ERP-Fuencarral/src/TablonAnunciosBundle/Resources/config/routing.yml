@@ -1,3 +1,0 @@
-tablon_anuncios_homepage:
-    path:     /
-    defaults: { _controller: TablonAnunciosBundle:Default:index }
