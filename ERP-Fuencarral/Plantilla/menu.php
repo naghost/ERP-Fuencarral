@@ -5,7 +5,84 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item ">
+  	<?php
+  	//aqui dentro se hacen las condiciones
+  	session_start();
+
+  	$puesto = $_SESSION['permiso'];
+
+  	//menu para los administradores
+  	if($puesto == "admin"){
+  		echo "<li class='nav-item'>";
+        	echo "<a class='nav-link' href='#'>Inventario <span class='sr-only'>(current)</span></a>";
+      	echo "</li>";
+
+      	echo "<li class='nav-item'>";
+        	echo "<a class='nav-link' href='#'>Fabricacion <span class='sr-only'>(current)</span></a>";
+      	echo "</li>";
+
+      	echo "<li class='nav-item'>";
+        	echo "<a class='nav-link' href='#'>Punto de Venta <span class='sr-only'>(current)</span></a>";
+      	echo "</li>";
+
+      	echo "<li class='nav-item'>";
+        	echo "<a class='nav-link' href='#'>Ventas <span class='sr-only'>(current)</span></a>";
+      	echo "</li>";
+
+      	echo "<li class='nav-item'>";
+        	echo "<a class='nav-link' href='#'>Proyecto <span class='sr-only'>(current)</span></a>";
+      	echo "</li>";
+
+      	echo "<li class='nav-item'>";
+        	echo "<a class='nav-link' href='#'>Contabilidad <span class='sr-only'>(current)</span></a>";
+      	echo "</li>";
+
+      	echo "<li class='nav-item'>";
+        	echo "<a class='nav-link' href='#'>Compras <span class='sr-only'>(current)</span></a>";
+      	echo "</li>";
+
+      	echo "<li class='nav-item'>";
+        	echo "<a class='nav-link' href='#'>Personal <span class='sr-only'>(current)</span></a>";
+      	echo "</li>";
+
+      	echo "<li class='nav-item'>";
+        	echo "<a class='nav-link' href='#'>Calendario <span class='sr-only'>(current)</span></a>";
+      	echo "</li>";
+
+      	echo "<li class='nav-item'>";
+        	echo "<a class='nav-link' href='#'>Chat <span class='sr-only'>(current)</span></a>";
+      	echo "</li>";
+
+      	echo "<li class='nav-item'>";
+        	echo "<a class='nav-link' href='#'>Parte de Horas <span class='sr-only'>(current)</span></a>";
+      	echo "</li>";
+  	}
+
+  	//menu para los fabricantes
+  	if($puesto == "fabricante"){
+  		echo "<li class='nav-item'>";
+        	echo "<a class='nav-link' href='#'>Inventario <span class='sr-only'>(current)</span></a>";
+      	echo "</li>";
+
+      	echo "<li class='nav-item'>";
+        	echo "<a class='nav-link' href='#'>Fabricacion <span class='sr-only'>(current)</span></a>";
+      	echo "</li>";
+  	}
+
+  	//menu para los vendedores
+  	if($puesto == "vendedor"){
+  		echo "<li class='nav-item'>";
+        	echo "<a class='nav-link' href='#'>Punto de Venta <span class='sr-only'>(current)</span></a>";
+      	echo "</li>";
+
+      	echo "<li class='nav-item'>";
+        	echo "<a class='nav-link' href='#'>Ventas <span class='sr-only'>(current)</span></a>";
+      	echo "</li>";
+  	}
+
+
+  	?>
+     <!-- <li class="nav-item ">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
@@ -24,7 +101,7 @@
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
+      </li> -->
     </ul>
     
   </div>
