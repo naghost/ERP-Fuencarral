@@ -18,7 +18,7 @@
       	echo "</li>";
 
       	echo "<li class='nav-item'>";
-        	echo "<a class='nav-link' href='#'>Fabricacion <span class='sr-only'>(current)</span></a>";
+        	echo "<a class='nav-link' href='/Fabricacion/index.php'>Fabricacion <span class='sr-only'>(current)</span></a>";
       	echo "</li>";
 
       	echo "<li class='nav-item'>";
@@ -42,7 +42,7 @@
       	echo "</li>";
 
       	echo "<li class='nav-item'>";
-        	echo "<a class='nav-link' href='#'>Personal <span class='sr-only'>(current)</span></a>";
+        	echo "<a class='nav-link' href='/Personal/infopersonal.php'>Personal <span class='sr-only'>(current)</span></a>";
       	echo "</li>";
 
       	echo "<li class='nav-item'>";
@@ -65,7 +65,7 @@
       	echo "</li>";
 
       	echo "<li class='nav-item'>";
-        	echo "<a class='nav-link' href='#'>Fabricacion <span class='sr-only'>(current)</span></a>";
+        	echo "<a class='nav-link' href='/Fabricacion/index.php'>Fabricacion <span class='sr-only'>(current)</span></a>";
       	echo "</li>";
   	}
 
