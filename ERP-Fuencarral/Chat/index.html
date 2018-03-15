@@ -1,0 +1,113 @@
+
+<html>
+  <head>
+    <title id="TITLE">Chat</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages li { padding: 5px 10px; }
+      #messages li:nth-child(odd) { background: #eee; }
+      #messages { margin-bottom: 40px }
+    </style>
+  </head>
+  <body>
+    <!--<div style="position: fixed; top:0px; left:90%; height: 10%; width: 10%;"> 
+      <button onclick="c_usuario('Alvaro')">Alvaro</button>
+      <button onclick="c_usuario('Javi')">Javi</button>
+    </div>-->
+    <ul id="messages">
+      <div id="feedback"></div>
+
+    </ul>
+    <form action="">
+      <input id="m" autocomplete="off" /><button>Enviar</button>
+    </form>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+ 
+
+      //La idea es que usuraio sea el usuario que esta conectado. Después, podría poner un boton por cada usuario conectado y que al pulsar se abriera una nueva conversación con él.
+      function GetURLParameter(sParam){
+          var sPageURL = window.location.search.substring(1);
+          var sURLVariables = sPageURL.split('&');
+          for (var i = 0; i < sURLVariables.length; i++) 
+          {
+              var sParameterName = sURLVariables[i].split('=');
+              if (sParameterName[0] == sParam) 
+              {
+                  return sParameterName[1];
+              }else{
+                return "Anonimo";
+              }
+
+          }
+      }
+      var usuario = GetURLParameter('usuario');
+      console.log(usuario);
+
+      document.getElementsByTagName("TITLE")[0].text = usuario;
+      function c_usuario(nombre){
+        document.getElementsByTagName("TITLE")[0].text = usuario;
+        usuario = nombre;
+      }
+      function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+
+
+      
+      
+
+      $(function () {
+        var socket = io();
+        var mensaje = $('#m');
+        var color = getRandomColor();
+
+        
+        $('#feedback').html(" ");
+        $('form').submit(function(){
+          var date =new Date()
+          var info ="<p style='color:"+color+"''>["+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()+"] "+usuario+": "+$('#m').val()+"</p>";
+
+          socket.emit('chat message', info);
+          $('#m').val('');
+          socket.emit('clean');
+          return false;
+        });
+        socket.on('chat message', function(msg){
+          $('#messages').append('<li>'+msg+'</li>');
+          window.scrollTo(0, document.body.scrollHeight);
+        });
+
+
+        $('#m').bind("keyup", () => {
+          if(mensaje.val().length>0 ){
+            socket.emit('typing', {username :  usuario})
+          }else{
+            socket.emit('clean')
+          }
+        })
+        socket.on('typing', (data) => {
+           $('#feedback').html("<p style='color:blue'><i>" + data.username + " esta escribiendo un mensaje..." + "</i></p>")
+        })
+        socket.on('clean',() => {
+           $('#feedback').html(" ")
+        })
+
+      
+
+      });   
+
+    </script>
+  </body>
+</html>
