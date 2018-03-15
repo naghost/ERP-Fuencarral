@@ -1,9 +1,22 @@
 
    <?php
     $titulo="Personal";
-    include '../Plantilla/head.php';
+    include '../Personal/head.php';
     ?>
 <div id="wrapper">
+    <nav id="sidebar">
+                    <!-- Sidebar Links -->
+                    <ul class="list-unstyled components">
+
+                        <li><!-- Link with dropdown items -->
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Personal</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li><a href="infopersonal.php">Info. Personal</a></li>
+                            <li><a href="departamentos1.php">Departamentos</a></li>
+                            <li><a href="checkeo1.php">Control de asistencia</a></li>
+                        </ul>
+                    </ul>
+                </nav>
    <div id="page-content-wrapper">
         <div class="container-fluid">
                     </br>
@@ -208,6 +221,6 @@
     </div>
 </div>
     <?php
-        include '../Plantilla/foot.php'
+        include '../Personal/foot.php'
         ?> 
   

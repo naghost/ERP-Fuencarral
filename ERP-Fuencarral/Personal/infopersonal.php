@@ -1,9 +1,22 @@
 
       <?php
         $titulo="Personal";
-        include '../Plantilla/head.php';
+        include '../Personal/head.php';
         ?>
     <div id="wrapper">
+        <nav id="sidebar">
+                    <!-- Sidebar Links -->
+                    <ul class="list-unstyled components">
+
+                        <li><!-- Link with dropdown items -->
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Personal</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li><a href="infopersonal.php">Info. Personal</a></li>
+                            <li><a href="departamentos1.php">Departamentos</a></li>
+                            <li><a href="checkeo1.php">Control de asistencia</a></li>
+                        </ul>
+                    </ul>
+                </nav>
       
         <?php 
 
@@ -245,7 +258,7 @@
 
                        <div class="btn-group col-md-9">
                             <input class="btn btn-default" type="submit" name = "buscarButton" value="Buscar">
-                            <input type="text" class="form-control" style="width:120px" name="DNIBusca"  id="DNIBusca" placeholder="DNI">
+                            <input type="text" class="form-control" style="width:120px" name="DNIBusca"  id="DNIBusca" placeholder="Apellidos">
                             <input class="btn btn-default" type="submit" name = "addButton" value="Añadir">
                             <input class="btn btn-default" type="submit" name = "editButton" value="Editar">
                         </div>
@@ -327,7 +340,7 @@ if(!EMPTY($_POST['addButton'])){
 
         $dni = $_POST['DNIBusca'];
 
-        $select = "SELECT * FROM Empleados where dni like '$dni'";
+        $select = "SELECT * FROM Empleados where apellidos like '$dni'";
 
         $resultadoBusqueda = mysqli_query($link,$select);
 
@@ -388,5 +401,5 @@ mysqli_close($link);
         <!-- /#page-content-wrapper -->
     </div>
           <?php
-        include '../Plantilla/foot.php'
+        include '../Personal/foot.php'
         ?>
